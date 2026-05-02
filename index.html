@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ColorInsomnia – Android-приложение</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 15px;
+      color: #333;
+    }
+    h1, h2, h3 {
+      margin-top: 1.2em;
+      margin-bottom: 0.6em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-bottom: 2em;
+    }
+    .screens {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 1em;
+    }
+    .screen {
+      flex: 1 1 300px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: left;
+    }
+    .screen img {
+      width: 100%;
+      height: auto;
+      max-width: 200px;
+      display: block;
+      margin: 6px auto;
+    }
+    .screen h3 {
+      margin-bottom: 0.2em;
+      font-size: 1em;
+      padding: 8px 12px;
+      background: #f0f0f0;
+    }
+    .screen p {
+      margin-bottom: 0.5em;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    .screen ul {
+      padding-left: 20px;
+      margin: 0 0 0.5em 0;
+      text-align: left;
+    }
+    .download {
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .download a {
+      font-weight: bold;
+      color: #0066cc;
+    }
+    .sha {
+      font-family: monospace;
+      word-break: break-all;
+      background: #eee;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 0.9em;
+    }
+    .lang-switch button {
+      margin-left: 4px;
+      padding: 4px 8px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ColorInsomnia</h1>
+    <img src="img/ic_colorInsomnia.png" alt="ColorInsomnia pic"/>
+    <p>
+        Подбор материалов для рукоделия. Расчёт цветовых гармоний и поиск цвета с камеры.
+    </p>
+    <div class="lang-switch">
+        <button onclick="setLang('ru')" id="lang-ru">RU</button>
+        <button onclick="setLang('en')" id="lang-en">EN</button>
+    </div>
+</header>
+
+<section class="section">
+    <h2 id="section-general">Общее описание</h2>
+    <p id="general-p1">
+        ColorInsomnia — инструмент цвета для дизайнеров и мастеров рукоделия: рассчитывает гармоничные сочетания,
+        распознаёт цвет с камеры, находит названия оттенков и подбирает бренды и идентификаторы материалов для закупки.
+    </p>
+    <p id="general-p2">
+        Приложение подходит для дизайнеров украшений, fashion‑индустрии и всех, кто интересуется
+        психологией и эстетикой света и цвета. Интерфейс интуитивен и не требует сложных настроек.
+    </p>
+</section>
+
+<section class="section">
+    <h2 id="section-download">Скачать APK</h2>
+
+    <p id="download-p1">
+        Приложение можно установить напрямую или через RuStore.
+    </p>
+
+    <p id="download-p2">
+        <img src="img/RuStore.png" alt="RusStore"/>
+        <br/>
+        <a href="https://www.rustore.ru/catalog/app/com.sandaapps.colorinsomnia" id="download-ru-store">
+            Скачать и установить ColorInsomnia с RuStore
+        </a>
+    </p>
+
+    <p id="download-p3">
+        Также приложение можно установить напрямую, без использования RuStore.
+    </p>
+
+    <div class="download">
+        <p>
+            <a href="dist/ColorInsomnia_v16.0.apk"
+               download="ColorInsomnia_v16.0.apk">
+                Download APK (ColorInsomnia v16.0)
+            </a>
+        </p>
+        <p id="download-checksum-text">
+            Перед установкой рекомендуется сверить SHA‑256‑хэш:
+        </p>
+        <div class="sha">
+            SHA‑256:
+            <br/>
+            <span id="sha-code">e7dc37b8597a83853eb382191cc48a045c5c10947aab445d8b5945391ac316a5</span>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 id="section-screens">Экраны приложения</h2>
+    <div class="screens">
+
+        <div class="screen">
+            <img src="img/main_screen.png" alt="Главный экран"/>
+            <img src="img/main_screen_hint.png" alt="Подсказка на главном экране"/>
+            <h3 id="screen-main-title">Главный экран</h3>
+            <p id="screen-main-p1">
+                Главный экран обеспечивает навигацию по ключевым функциям приложения.
+            </p>
+            <p id="screen-main-p2">
+                В правом верхнем углу расположен переход в настройки приложения.
+            </p>
+            <p id="screen-main-p3">
+                В центральной части для вдохновения ежедневно отображается «картинка дня» и подобранная по её цветовой
+                гамме палитра из пяти цветов.
+                При нажатии на картинку дня открывается экран материалов, подобранных к цветам этой палитры.
+            </p>
+            <p id="screen-main-p4">
+                Восемь иконок внизу обеспечивают переход на экраны для:
+            </p>
+            <ul id="screen-main-ul">
+                <li id="screen-main-li1">подбора цветовых гармоний к заданному цвету;</li>
+                <li id="screen-main-li2">кластеризации изображения для упрощения его цветовой палитры и скачивания в виде «схемы» с подобранными материалами к каждому цвету;</li>
+                <li id="screen-main-li3">ведения wish‑листа для быстрого доступа к избранным материалам;</li>
+                <li id="screen-main-li4">чтения новостей и статей о свете и цвете;</li>
+                <li id="screen-main-li5">поиска цвета через объектив фотокамеры с возможностью перехода к цветовым гармониям или списку материалов по цвету;</li>
+                <li id="screen-main-li6">хранения палитр и предпросмотра цветов в виде плетёного компонента или комплекта одежды;</li>
+                <li id="screen-main-li7">анализа цвета или всей картинки, сохранённой на устройстве;</li>
+                <li id="screen-main-li8">поиска по идентификатору цвета производителя.</li>
+            </ul>
+        </div>
+
+        <div class="screen">
+            <img src="img/settings_screen.png" alt="Экран настроек"/>
+            <h3 id="screen-settings-title">Экран настроек</h3>
+            <p id="screen-settings-p">
+                На этом экране можно включить или отключить подсказки, настроить тему приложения, очистить кэш,
+                отправить вопрос или отзыв разработчикам, а также посмотреть версию приложения.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/colorpicker_screen.png" alt="Экран цветовых гармоний"/>
+            <h3 id="screen-harmonies-title">Цветовые гармонии</h3>
+            <p id="screen-harmonies-p1">
+                Раздел позволяет подобрать к целевому цвету гармоничное сочетание. Для точности ввода цвета можно
+                использовать HEX‑значение в правом верхнем углу цветового круга.
+            </p>
+            <p id="screen-harmonies-p2">
+                После подбора сочетания выбранные цвета можно добавить в палитру или перейти к разделу материалов, чтобы
+                просмотреть доступные варианты по заданным цветам.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/clusterize_screen.png" alt="Экран кластеризации изображения"/>
+            <h3 id="screen-clusterize-title">Кластеризация изображения</h3>
+            <p id="screen-clusterize-p">
+                Функция позволяет уменьшать количество цветов на изображении и сохранять результат либо в виде
+                обновлённого изображения, либо в виде схемы с указанием расположения цветов и списка подобранных к ним
+                материалов.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/wishlist_screen.png" alt="Экран списка желаний"/>
+            <h3 id="screen-wishlist-title">Список желаний</h3>
+            <p id="screen-wishlist-p">
+                В этом разделе можно хранить списки избранных материалов и быстро к ним возвращаться.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/news_and_notes_screen.png" alt="Экран новостей и статей"/>
+            <h3 id="screen-news-title">Новости и статьи о свете и цвете</h3>
+            <p id="screen-news-p">
+                В этом разделе представлены очерки, статьи и новости о цвете и его восприятии.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/camera_screen.png" alt="Экран поиска цвета по видоискателю"/>
+            <img src="img/camera_screen_2.png" alt="Экран поиска цвета по видоискателю"/>
+            <h3 id="screen-camera-title">Поиск цвета по видоискателю</h3>
+            <p id="screen-camera-p1">
+                Раздел позволяет оценивать цвет в режиме реального времени и перейти к гармоничным сочетаниям или
+                материалам по выбранному цвету.
+            </p>
+            <p id="screen-camera-p2">
+                Для удобства можно заморозить изображение и нажатием пальца выбрать нужную область. Также поддерживаются
+                картинки, сохранённые на устройстве.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/palette_screen.png" alt="Экран палитр"/>
+            <img src="img/palette_bead_component_screen.png" alt="Предпросмотр палитры в плетёном компоненте"/>
+            <img src="img/palette_outfit_screen.png" alt="Предпросмотр палитры в виде комплекта одежды"/>
+            <h3 id="screen-palette-title">Сохранённые палитры</h3>
+            <p id="screen-palette-p1">
+                В этом разделе можно хранить до 10 палитр, сохранённых из раздела «Гармонии» или сгенерированных
+                случайным образом.
+            </p>
+            <p id="screen-palette-p2">
+                Палитру можно «примерить» к плетёному элементу или комплекту одежды, чтобы оценить её визуальное
+                восприятие.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/open_device_picture_screen.png" alt="Экран анализа изображения с устройства"/>
+            <img src="img/open_device_picture_screen_2.png" alt="Экран анализа изображения с устройства"/>
+            <img src="img/open_device_picture_screen_3.png" alt="Экран анализа изображения с устройства"/>
+            <h3 id="screen-device-picture-title">Анализ цвета изображения с устройства</h3>
+            <p id="screen-device-picture-p">
+                Раздел позволяет открыть изображение, сохранённое на устройстве, и проанализировать цвета со всего
+                изображения или с выбранного фрагмента.
+            </p>
+        </div>
+
+        <div class="screen">
+            <img src="img/search_by_id_screen.png" alt="Экран поиска материалов по идентификатору"/>
+            <img src="img/search_by_id_screen_2.png" alt="Экран поиска материалов по идентификатору"/>
+            <h3 id="screen-search-by-id-title">Поиск материалов по идентификатору материала</h3>
+            <p id="screen-search-by-id-p">
+                В этом разделе можно, зная идентификатор цвета, найти нужный материал и подобрать гармоничные цвета или
+                аналогичные материалы.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p id="footer-text">ColorInsomnia © 2026 | Все права защищены.</p>
+</footer>
+
+<script>
+    const texts = {
+      ru: {
+        title: "ColorInsomnia – Android-приложение",
+        subtitle: "Подбор материалов для рукоделия. Расчёт цветовых гармоний и поиск цвета с камеры.",
+        "section-general": "Общее описание",
+        "general-p1": "ColorInsomnia — инструмент цвета для дизайнеров и мастеров рукоделия: рассчитывает гармоничные сочетания, распознаёт цвет с камеры, находит названия оттенков и подбирает бренды и идентификаторы материалов для закупки.",
+        "general-p2": "Приложение подходит для дизайнеров украшений, fashion‑индустрии и всех, кто интересуется психологией и эстетикой света и цвета. Интерфейс интуитивен и не требует сложных настроек.",
+        "section-screens": "Экраны приложения",
+        "section-download": "Скачать APK",
+        "download-p1": "Приложение можно установить напрямую или через RuStore.",
+        "download-p2": "Скачать и установить ColorInsomnia с RuStore",
+        "download-p3": "Также приложение можно установить напрямую, без использования RuStore.",
+        "download-checksum-text": "Перед установкой рекомендуется сверить SHA‑256‑хэш:",
+        "footer-text": "ColorInsomnia © 2026 | Все права защищены.",
+        "screen-main-title": "Главный экран",
+        "screen-main-p1": "Главный экран обеспечивает навигацию по ключевым функциям приложения.",
+        "screen-main-p2": "В правом верхнем углу расположен переход в настройки приложения.",
+        "screen-main-p3": "В центральной части для вдохновения ежедневно отображается «картинка дня» и подобранная по её цветовой гамме палитра из пяти цветов. При нажатии на картинку дня открывается экран материалов, подобранных к цветам этой палитры.",
+        "screen-main-p4": "Восемь иконок внизу обеспечивают переход на экраны для:",
+        "screen-main-li1": "подбора цветовых гармоний к заданному цвету;",
+        "screen-main-li2": "кластеризации изображения для упрощения его цветовой палитры и скачивания в виде «схемы» с подобранными материалами к каждому цвету;",
+        "screen-main-li3": "ведения wish‑листа для быстрого доступа к избранным материалам;",
+        "screen-main-li4": "чтения новостей и статей о свете и цвете;",
+        "screen-main-li5": "поиска цвета через объектив фотокамеры с возможностью перехода к цветовым гармониям или списку материалов по цвету;",
+        "screen-main-li6": "хранения палитр и предпросмотра цветов в виде плетёного компонента или комплекта одежды;",
+        "screen-main-li7": "анализа цвета или всей картинки, сохранённой на устройстве;",
+        "screen-main-li8": "поиска по идентификатору цвета производителя.",
+        "screen-settings-title": "Экран настроек",
+        "screen-settings-p": "На этом экране можно включить или отключить подсказки, настроить тему приложения, очистить кэш, отправить вопрос или отзыв разработчикам, а также посмотреть версию приложения.",
+        "screen-harmonies-title": "Цветовые гармонии",
+        "screen-harmonies-p1": "Раздел позволяет подобрать к целевому цвету гармоничное сочетание. Для точности ввода цвета можно использовать HEX‑значение в правом верхнем углу цветового круга.",
+        "screen-harmonies-p2": "После подбора сочетания выбранные цвета можно добавить в палитру или перейти к разделу материалов, чтобы просмотреть доступные варианты по заданным цветам.",
+        "screen-clusterize-title": "Кластеризация изображения",
+        "screen-clusterize-p": "Функция позволяет уменьшать количество цветов на изображении и сохранять результат либо в виде обновлённого изображения, либо в виде схемы с указанием расположения цветов и списка подобранных к ним материалов.",
+        "screen-wishlist-title": "Список желаний",
+        "screen-wishlist-p": "В этом разделе можно хранить списки избранных материалов и быстро к ним возвращаться.",
+        "screen-news-title": "Новости и статьи о свете и цвете",
+        "screen-news-p": "В этом разделе представлены очерки, статьи и новости о цвете и его восприятии.",
+        "screen-camera-title": "Поиск цвета по видоискателю",
+        "screen-camera-p1": "Раздел позволяет оценивать цвет в режиме реального времени и перейти к гармоничным сочетаниям или материалам по выбранному цвету.",
+        "screen-camera-p2": "Для удобства можно заморозить изображение и нажатием пальца выбрать нужную область. Также поддерживаются картинки, сохранённые на устройстве.",
+        "screen-palette-title": "Сохранённые палитры",
+        "screen-palette-p1": "В этом разделе можно хранить до 10 палитр, сохранённых из раздела «Гармонии» или сгенерированных случайным образом.",
+        "screen-palette-p2": "Палитру можно «примерить» к плетёному элементу или комплекту одежды, чтобы оценить её визуальное восприятие.",
+        "screen-device-picture-title": "Анализ цвета изображения с устройства",
+        "screen-device-picture-p": "Раздел позволяет открыть изображение, сохранённое на устройстве, и проанализировать цвета со всего изображения или с выбранного фрагмента.",
+        "screen-search-by-id-title": "Поиск материалов по идентификатору материала",
+        "screen-search-by-id-p": "В этом разделе можно, зная идентификатор цвета, найти нужный материал и подобрать гармоничные цвета или аналогичные материалы."
+      },
+
+    en: {
+      title: "ColorInsomnia – Android app",
+      subtitle: "Material selection for crafting. Color harmony calculation and camera color search.",
+      "section-general": "General description",
+      "general-p1": "ColorInsomnia is a color tool for designers and crafters: it calculates harmonious color combinations, recognizes color from the camera, finds shade names, and suggests brands and material IDs for purchase.",
+      "general-p2": "The app is suitable for jewelry designers, fashion industry professionals, and everyone interested in the psychology and aesthetics of light and color. The interface is intuitive and does not require complex settings.",
+      "section-screens": "Screens",
+      "section-download": "Download APK",
+      "download-p1": "The app can be installed directly or via RuStore.",
+      "download-p2": "Download and install ColorInsomnia from RuStore",
+      "download-p3": "The app can also be installed directly, without RuStore.",
+      "download-checksum-text": "Before installing, it is recommended to verify the SHA‑256 checksum:",
+      "footer-text": "ColorInsomnia © 2026 | All rights reserved.",
+      "screen-main-title": "Main screen",
+      "screen-main-p1": "The main screen provides navigation to key app features.",
+      "screen-main-p2": "In the top right corner there is a link to the app settings.",
+      "screen-main-p3": "In the central area, an inspiring \"picture of the day\" is displayed daily, along with a palette of five colors selected based on its color scheme. Tapping the picture opens the screen of materials matched to the colors of this palette.",
+      "screen-main-p4": "Eight icons at the bottom provide transitions to the following screens:",
+      "screen-main-li1": "harmonic color combinations for a given target color;",
+      "screen-main-li2": "image clustering for simplifying its color palette and saving it as a \"scheme\" with matched materials for each color;",
+      "screen-main-li3": "managing a wishlist for quick access to favorite materials;",
+      "screen-main-li4": "reading news and articles about light and color;",
+      "screen-main-li5": "color search through the camera viewfinder with the option to move to color harmonies or a materials list by color;",
+      "screen-main-li6": "storing palettes and previewing colors in a woven component or clothing set;",
+      "screen-main-li7": "color analysis of an image saved on the device;",
+      "screen-main-li8": "search by the manufacturer's color ID.",
+      "screen-settings-title": "Settings screen",
+      "screen-settings-p": "On this screen you can enable or disable tips, customize the app theme, clear the cache, send questions or feedback to the developers, and check the app version.",
+      "screen-harmonies-title": "Color harmonies",
+      "screen-harmonies-p1": "This section allows you to select a harmonious color combination for a given target color. For accurate color input, you can use the HEX value in the top right corner of the color wheel.",
+      "screen-harmonies-p2": "After selecting the combination, you can add the chosen colors to a palette or proceed to the materials section to view available options for the selected colors.",
+      "screen-clusterize-title": "Image clustering",
+      "screen-clusterize-p": "This feature lets you reduce the number of colors in an image and save the result either as a revised image or as a scheme showing color locations and a list of matching materials.",
+      "screen-wishlist-title": "Wishlist",
+      "screen-wishlist-p": "This section lets you store lists of favorite materials and switch back to them quickly.",
+      "screen-news-title": "News and articles about light and color",
+      "screen-news-p": "This section presents essays, articles, and news about color and its perception.",
+      "screen-camera-title": "Color search through the viewfinder",
+      "screen-camera-p1": "This screen lets you analyze color in real time and move to color harmonies or material listings for the selected color.",
+      "screen-camera-p2": "For convenience, you can freeze the image and select the desired area with a tap. Images stored on the device are also supported.",
+      "screen-palette-title": "Saved palettes",
+      "screen-palette-p1": "This section lets you store up to 10 palettes saved from the Harmonies section or generated randomly.",
+      "screen-palette-p2": "You can \"try on\" a palette with a woven component or clothing set to see how it looks in context.",
+      "screen-device-picture-title": "Color analysis of an image from the device",
+      "screen-device-picture-p": "This screen lets you open an image stored on the device and analyze colors across the whole image or a selected fragment.",
+      "screen-search-by-id-title": "Search materials by material ID",
+      "screen-search-by-id-p": "In this section, knowing the color ID, you can find the matching material and select harmonious colors or similar materials.",
+    }
+
+   };
+
+  function getLang() {
+    const saved = localStorage.getItem("colorinsomnia-lang");
+    if (saved === "ru" || saved === "en") return saved;
+    return "ru";
+  }
+
+  function setLang(lang) {
+    localStorage.setItem("colorinsomnia-lang", lang);
+    document.documentElement.lang = lang;
+    updateTexts(lang);
+
+    const ruBtn = document.getElementById("lang-ru");
+    const enBtn = document.getElementById("lang-en");
+    if (ruBtn && enBtn) {
+      ruBtn.style.fontWeight = lang === "ru" ? "bold" : "normal";
+      enBtn.style.fontWeight = lang === "en" ? "bold" : "normal";
+    }
+  }
+
+  function updateTexts(lang) {
+    const t = texts[lang];
+    if (!t) return;
+
+    document.title = t.title;
+    document.querySelector("header p").textContent = t.subtitle;
+
+    document.getElementById("section-general").textContent = t["section-general"];
+    document.getElementById("general-p1").textContent = t["general-p1"];
+    document.getElementById("general-p2").textContent = t["general-p2"];
+
+    document.getElementById("section-screens").textContent = t["section-screens"];
+    document.getElementById("section-download").textContent = t["section-download"];
+
+    document.getElementById("download-p1").textContent = t["download-p1"];
+    document.getElementById("download-ru-store").textContent = t["download-p2"];
+    document.getElementById("download-p3").textContent = t["download-p3"];
+    document.getElementById("download-checksum-text").textContent = t["download-checksum-text"];
+    document.getElementById("footer-text").textContent = t["footer-text"];
+
+    document.getElementById("screen-main-title").textContent = t["screen-main-title"];
+    document.getElementById("screen-main-p1").textContent = t["screen-main-p1"];
+    document.getElementById("screen-main-p2").textContent = t["screen-main-p2"];
+    document.getElementById("screen-main-p3").textContent = t["screen-main-p3"];
+    document.getElementById("screen-main-p4").textContent = t["screen-main-p4"];
+
+    document.getElementById("screen-main-li1").textContent = t["screen-main-li1"];
+    document.getElementById("screen-main-li2").textContent = t["screen-main-li2"];
+    document.getElementById("screen-main-li3").textContent = t["screen-main-li3"];
+    document.getElementById("screen-main-li4").textContent = t["screen-main-li4"];
+    document.getElementById("screen-main-li5").textContent = t["screen-main-li5"];
+    document.getElementById("screen-main-li6").textContent = t["screen-main-li6"];
+    document.getElementById("screen-main-li7").textContent = t["screen-main-li7"];
+    document.getElementById("screen-main-li8").textContent = t["screen-main-li8"];
+
+    document.getElementById("screen-settings-title").textContent = t["screen-settings-title"];
+    document.getElementById("screen-settings-p").textContent = t["screen-settings-p"];
+
+    document.getElementById("screen-harmonies-title").textContent = t["screen-harmonies-title"];
+    document.getElementById("screen-harmonies-p1").textContent = t["screen-harmonies-p1"];
+    document.getElementById("screen-harmonies-p2").textContent = t["screen-harmonies-p2"];
+
+    document.getElementById("screen-clusterize-title").textContent = t["screen-clusterize-title"];
+    document.getElementById("screen-clusterize-p").textContent = t["screen-clusterize-p"];
+
+    document.getElementById("screen-wishlist-title").textContent = t["screen-wishlist-title"];
+    document.getElementById("screen-wishlist-p").textContent = t["screen-wishlist-p"];
+
+    document.getElementById("screen-news-title").textContent = t["screen-news-title"];
+    document.getElementById("screen-news-p").textContent = t["screen-news-p"];
+
+    document.getElementById("screen-camera-title").textContent = t["screen-camera-title"];
+    document.getElementById("screen-camera-p1").textContent = t["screen-camera-p1"];
+    document.getElementById("screen-camera-p2").textContent = t["screen-camera-p2"];
+
+    document.getElementById("screen-palette-title").textContent = t["screen-palette-title"];
+    document.getElementById("screen-palette-p1").textContent = t["screen-palette-p1"];
+    document.getElementById("screen-palette-p2").textContent = t["screen-palette-p2"];
+
+    document.getElementById("screen-device-picture-title").textContent = t["screen-device-picture-title"];
+    document.getElementById("screen-device-picture-p").textContent = t["screen-device-picture-p"];
+
+    document.getElementById("screen-search-by-id-title").textContent = t["screen-search-by-id-title"];
+    document.getElementById("screen-search-by-id-p").textContent = t["screen-search-by-id-p"];
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setLang(getLang());
+  });
+
+</script>
