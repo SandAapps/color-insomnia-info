@@ -59,6 +59,12 @@
       margin: 0 0 0.5em 0;
       text-align: left;
     }
+    .download-17 {
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
     .download {
       padding: 20px;
       background: #f8f9fa;
@@ -68,6 +74,14 @@
     .download a {
       font-weight: bold;
       color: #0066cc;
+    }
+    .sha-17 {
+      font-family: monospace;
+      word-break: break-all;
+      background: #eee;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 8px;
     }
     .sha {
       font-family: monospace;
@@ -136,6 +150,24 @@
     <p id="download-p3">
         Также приложение можно установить напрямую, без использования RuStore.
     </p>
+
+    <div class="download-17">
+        <p>
+            <a href="dist/ColorInsomnia_v17.0.apk"
+               download="ColorInsomnia_v17.0.apk">
+                Download APK (ColorInsomnia v17.0)
+            </a>
+        </p>
+        <p id="download-checksum-text-17">
+            Перед установкой рекомендуется сверить SHA‑256‑хэш:
+        </p>
+        <div class="sha-17">
+            SHA‑256:
+            <br/>
+            <span id="sha-code-17">552c0ec0bef8f61c6cc081b5cac085b8a135011396ed454e2a37a185269dc763</span>
+        </div>
+    </div>
+
 
     <div class="download">
         <p>
@@ -307,6 +339,7 @@
         "download-p1": "Приложение можно установить напрямую или через RuStore.",
         "download-p2": "Скачать и установить ColorInsomnia с RuStore",
         "download-p3": "Также приложение можно установить напрямую, без использования RuStore.",
+        "download-checksum-text-17": "Перед установкой рекомендуется сверить SHA‑256‑хэш:",
         "download-checksum-text": "Перед установкой рекомендуется сверить SHA‑256‑хэш:",
         "footer-text": "ColorInsomnia © 2026 | Все права защищены.",
         "screen-main-title": "Главный экран",
@@ -356,6 +389,7 @@
       "download-p1": "The app can be installed directly or via RuStore.",
       "download-p2": "Download and install ColorInsomnia from RuStore",
       "download-p3": "The app can also be installed directly, without RuStore.",
+      "download-checksum-text-17": "Before installing, it is recommended to verify the SHA‑256 checksum:",
       "download-checksum-text": "Before installing, it is recommended to verify the SHA‑256 checksum:",
       "footer-text": "ColorInsomnia © 2026 | All rights reserved.",
       "screen-main-title": "Main screen",
@@ -432,6 +466,7 @@
     document.getElementById("download-p1").textContent = t["download-p1"];
     document.getElementById("download-ru-store").textContent = t["download-p2"];
     document.getElementById("download-p3").textContent = t["download-p3"];
+    document.getElementById("download-checksum-text-17").textContent = t["download-checksum-text-17"];
     document.getElementById("download-checksum-text").textContent = t["download-checksum-text"];
     document.getElementById("footer-text").textContent = t["footer-text"];
 
