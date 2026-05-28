@@ -1,0 +1,10 @@
+{
+  "latestVersion": "17.0",
+  "versionCode": 17,
+  "versionName": "17.0",
+  "releaseDate": "2026-05-26",
+  "releaseNotes": "Japanese ColorCalendar arrived",
+  "downloadUrl": "https://github.com/SandAapps/color-insomnia-info/blob/main/dist/ColorInsomnia_v17.0.apk",
+  "minSdk": 26,
+  "mandatoryUpdate": false
+}
