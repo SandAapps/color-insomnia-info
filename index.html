@@ -91,6 +91,17 @@
       border-radius: 4px;
       margin-top: 8px;
     }
+    .image-row {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-start;
+    }
+    .image-row img {
+      max-width: 33%;
+      min-width: 30%;
+      height: 30%;
+      object-fit: cover;
+    }
     .lang-switch {
       position: absolute;
       top: 20px;
@@ -192,8 +203,11 @@
     <div class="screens">
 
         <div class="screen">
-            <img src="img/main_screen.png" alt="Главный экран"/>
-            <img src="img/main_screen_hint.png" alt="Подсказка на главном экране"/>
+            <div class="image-row">
+                <img src="img/main_screen.png" alt="Главный экран"/>
+                <img src="img/main_screen_hint.png" alt="Подсказка на главном экране"/>
+            </div>
+
             <h3 id="screen-main-title">Главный экран</h3>
             <p id="screen-main-p1">
                 Главный экран обеспечивает навигацию по ключевым функциям приложения.
@@ -222,7 +236,10 @@
         </div>
 
         <div class="screen">
-            <img src="img/settings_screen.png" alt="Экран настроек"/>
+            <div class="image-row">
+                <img src="img/settings_screen.png" alt="Экран настроек"/>
+            </div>
+
             <h3 id="screen-settings-title">Экран настроек</h3>
             <p id="screen-settings-p">
                 На этом экране можно включить или отключить подсказки, настроить тему приложения, очистить кэш,
@@ -231,7 +248,10 @@
         </div>
 
         <div class="screen">
-            <img src="img/colorpicker_screen.png" alt="Экран цветовых гармоний"/>
+            <div class="image-row">
+                <img src="img/colorpicker_screen.png" alt="Экран цветовых гармоний"/>
+            </div>
+
             <h3 id="screen-harmonies-title">Цветовые гармонии</h3>
             <p id="screen-harmonies-p1">
                 Раздел позволяет подобрать к целевому цвету гармоничное сочетание. Для точности ввода цвета можно
@@ -244,7 +264,10 @@
         </div>
 
         <div class="screen">
-            <img src="img/clusterize_screen.png" alt="Экран кластеризации изображения"/>
+            <div class="image-row">
+                <img src="img/clusterize_screen.png" alt="Экран кластеризации изображения"/>
+            </div>
+
             <h3 id="screen-clusterize-title">Кластеризация изображения</h3>
             <p id="screen-clusterize-p">
                 Функция позволяет уменьшать количество цветов на изображении и сохранять результат либо в виде
@@ -254,7 +277,10 @@
         </div>
 
         <div class="screen">
-            <img src="img/wishlist_screen.png" alt="Экран списка желаний"/>
+            <div class="image-row">
+                <img src="img/wishlist_screen.png" alt="Экран списка желаний"/>
+            </div>
+
             <h3 id="screen-wishlist-title">Список желаний</h3>
             <p id="screen-wishlist-p">
                 В этом разделе можно хранить списки избранных материалов и быстро к ним возвращаться.
@@ -262,7 +288,9 @@
         </div>
 
         <div class="screen">
-            <img src="img/news_and_notes_screen.png" alt="Экран новостей и статей"/>
+            <div class="image-row">
+                <img src="img/news_and_notes_screen.png" alt="Экран новостей и статей"/>
+            </div>
             <h3 id="screen-news-title">Новости и статьи о свете и цвете</h3>
             <p id="screen-news-p">
                 В этом разделе представлены очерки, статьи и новости о цвете и его восприятии.
@@ -270,8 +298,11 @@
         </div>
 
         <div class="screen">
-            <img src="img/camera_screen.png" alt="Экран поиска цвета по видоискателю"/>
-            <img src="img/camera_screen_2.png" alt="Экран поиска цвета по видоискателю"/>
+            <div class="image-row">
+                <img src="img/camera_screen.png" alt="Экран поиска цвета по видоискателю"/>
+                <img src="img/camera_screen_2.png" alt="Экран поиска цвета по видоискателю"/>
+            </div>
+
             <h3 id="screen-camera-title">Поиск цвета по видоискателю</h3>
             <p id="screen-camera-p1">
                 Раздел позволяет оценивать цвет в режиме реального времени и перейти к гармоничным сочетаниям или
@@ -284,9 +315,12 @@
         </div>
 
         <div class="screen">
-            <img src="img/palette_screen.png" alt="Экран палитр"/>
-            <img src="img/palette_bead_component_screen.png" alt="Предпросмотр палитры в плетёном компоненте"/>
-            <img src="img/palette_outfit_screen.png" alt="Предпросмотр палитры в виде комплекта одежды"/>
+            <div class="image-row">
+                <img src="img/palette_screen.png" alt="Экран палитр"/>
+                <img src="img/palette_bead_component_screen.png" alt="Предпросмотр палитры в плетёном компоненте"/>
+                <img src="img/palette_outfit_screen.png" alt="Предпросмотр палитры в виде комплекта одежды"/>
+            </div>
+
             <h3 id="screen-palette-title">Сохранённые палитры</h3>
             <p id="screen-palette-p1">
                 В этом разделе можно хранить до 10 палитр, сохранённых из раздела «Гармонии» или сгенерированных
@@ -299,9 +333,12 @@
         </div>
 
         <div class="screen">
-            <img src="img/open_device_picture_screen.png" alt="Экран анализа изображения с устройства"/>
-            <img src="img/open_device_picture_screen_2.png" alt="Экран анализа изображения с устройства"/>
-            <img src="img/open_device_picture_screen_3.png" alt="Экран анализа изображения с устройства"/>
+            <div class="image-row">
+                <img src="img/open_device_picture_screen.png" alt="Экран анализа изображения с устройства"/>
+                <img src="img/open_device_picture_screen_2.png" alt="Экран анализа изображения с устройства"/>
+                <img src="img/open_device_picture_screen_3.png" alt="Экран анализа изображения с устройства"/>
+            </div>
+
             <h3 id="screen-device-picture-title">Анализ цвета изображения с устройства</h3>
             <p id="screen-device-picture-p">
                 Раздел позволяет открыть изображение, сохранённое на устройстве, и проанализировать цвета со всего
@@ -310,8 +347,10 @@
         </div>
 
         <div class="screen">
-            <img src="img/search_by_id_screen.png" alt="Экран поиска материалов по идентификатору"/>
-            <img src="img/search_by_id_screen_2.png" alt="Экран поиска материалов по идентификатору"/>
+            <div class="image-row">
+                <img src="img/search_by_id_screen.png" alt="Экран поиска материалов по идентификатору"/>
+                <img src="img/search_by_id_screen_2.png" alt="Экран поиска материалов по идентификатору"/>
+            </div>
             <h3 id="screen-search-by-id-title">Поиск материалов по идентификатору материала</h3>
             <p id="screen-search-by-id-p">
                 В этом разделе можно, зная идентификатор цвета, найти нужный материал и подобрать гармоничные цвета или
@@ -319,6 +358,16 @@
             </p>
         </div>
 
+        <div class="screen">
+            <div class="image-row">
+                <img src="img/color_calendar.jpg" alt="Экран календаря цветов"/>
+                <img src="img/color_calendar_day.jpg" alt="Экран календаря цветов"/>
+            </div>
+            <h3 id="screen-color-calendar-title">Поиск цветов, которые связаны с днем года</h3>
+            <p id="screen-color-calendar-p">
+                В этом разделе для вдохновения размещен японский календарь, в котором каждый день в году связан с определенным цветом.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -375,7 +424,9 @@
         "screen-device-picture-title": "Анализ цвета изображения с устройства",
         "screen-device-picture-p": "Раздел позволяет открыть изображение, сохранённое на устройстве, и проанализировать цвета со всего изображения или с выбранного фрагмента.",
         "screen-search-by-id-title": "Поиск материалов по идентификатору материала",
-        "screen-search-by-id-p": "В этом разделе можно, зная идентификатор цвета, найти нужный материал и подобрать гармоничные цвета или аналогичные материалы."
+        "screen-search-by-id-p": "В этом разделе можно, зная идентификатор цвета, найти нужный материал и подобрать гармоничные цвета или аналогичные материалы.",
+        "screen-color-calendar-title": "Японский календарь цветов",
+        "screen-color-calendar-p": "Здесь вы можете посмотреть японский календарь, в котором каждый день года связан с определенным цветом.",
       },
 
     en: {
@@ -426,6 +477,8 @@
       "screen-device-picture-p": "This screen lets you open an image stored on the device and analyze colors across the whole image or a selected fragment.",
       "screen-search-by-id-title": "Search materials by material ID",
       "screen-search-by-id-p": "In this section, knowing the color ID, you can find the matching material and select harmonious colors or similar materials.",
+      "screen-color-calendar-title": "Japanese color calendar",
+      "screen-color-calendar-p": "Here you can find japanese color calendar in which every day of the year is related to a color.",
     }
 
    };
@@ -514,6 +567,9 @@
 
     document.getElementById("screen-search-by-id-title").textContent = t["screen-search-by-id-title"];
     document.getElementById("screen-search-by-id-p").textContent = t["screen-search-by-id-p"];
+
+    document.getElementById("screen-color-calendar-title").textContent = t["screen-color-calendar-title"];
+    document.getElementById("screen-color-calendar-p").textContent = t["screen-color-calendar-p"];
   }
 
   document.addEventListener("DOMContentLoaded", () => {
