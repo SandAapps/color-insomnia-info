@@ -1018,9 +1018,26 @@
     document.getElementById("screen-color-calendar-p").textContent = t["screen-color-calendar-p"];
   }
 
+    function scrollToElementWithDelay(target, delay = 50) {
+        if (!target) return;
+
+        setTimeout(() => {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, delay);
+    }
+
   document.addEventListener("DOMContentLoaded", () => {
     setLang(getLang());
   });
 
+    window.addEventListener('load', () => {
+        if (window.location.hash.includes('#ppp')) {
+            const element = document.getElementById('ppp');
+            scrollToElementWithDelay(element)
+        }
+    });
 
 </script>
