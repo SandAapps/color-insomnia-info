@@ -117,6 +117,16 @@
       font-size: 0.9em;
       cursor: pointer;
     }
+    .download-p2 {
+      outline-width: 4px;
+      outline-style: solid; /* Must be specified for the outline to show */
+      outline-color: #00ff00;
+    }
+    .download-p2-a {
+      outline: 2px solid black;
+      outline-offset: 5px; /* Creates space between the paragraph and the outline */
+
+    }
 
      #privacy-policy {
         display: block;
@@ -161,26 +171,18 @@
     <h2 id="section-download">Скачать APK</h2>
 
     <p id="download-p1">
-        Приложение можно установить напрямую или через RuStore.
-    </p>
-
-    <p id="download-p2">
-        <img src="img/RuStore.png" alt="RusStore"/>
-        <br/>
-        <a href="https://www.rustore.ru/catalog/app/com.sandaapps.colorinsomnia" id="download-ru-store">
-            Скачать и установить ColorInsomnia с RuStore
-        </a>
+        Приложение можно установить напрямую или через RuStore и ApkPure.
     </p>
 
     <p id="download-p3">
-        Также приложение можно установить напрямую, без использования RuStore.
+        Приложение можно установить напрямую, без использования магазинов приложения.
     </p>
 
     <div class="download-17">
         <p>
-            <a href="dist/ColorInsomnia_v20.0.apk"
-               download="ColorInsomnia_v20.0.apk">
-                Download APK (ColorInsomnia v20.0)
+            <a href="dist/ColorInsomnia_v22.0.apk"
+               download="ColorInsomnia_v22.0.apk">
+                Download APK (ColorInsomnia v22.0)
             </a>
         </p>
         <p id="download-checksum-text-17">
@@ -189,9 +191,27 @@
         <div class="sha-17">
             SHA‑256:
             <br/>
-            <span id="sha-code-17">fa5d3dac17ace74a4271523acb9bb4048a1ad22e7ce8c96fdbfd5c6b385e014c</span>
+            <span id="sha-code-17">a9b65641a81924518382f5aa9dc837d2b9e7c382126f81351c15f5b127e3ad6d</span>
         </div>
     </div>
+
+    <p id="download-p2">
+        <img src="img/RuStore.png" alt="RuStore"/>
+        <br/>
+        <a href="https://www.rustore.ru/catalog/app/com.sandaapps.colorinsomnia" id="download-ru-store">
+            Скачать и установить ColorInsomnia с RuStore
+        </a>
+    </p>
+
+    <p id="download-p2-a">
+        <img src="img/ApkPure.png" alt="ApkPure"/>
+        <br/>
+        <a href="https://apkpure.com/p/com.sandaapps.colorinsomnia" id="download-apk-pure">
+            Скачать и установить ColorInsomnia с ApkPure
+        </a>
+    </p>
+
+
 </section>
 
 <section class="section">
@@ -363,7 +383,7 @@
         <div class="screen">
             <div class="image-row">
                 <img src="img/color_calendar.jpg" alt="Экран календаря цветов"/>
-                <img src="img/color_calendar_day.jpg" alt="Экран календаря цветов"/>
+                <img src="img/color_calendar_day_en.jpg" alt="Экран календаря цветов"/>
             </div>
             <h3 id="screen-color-calendar-title">Поиск цветов, которые связаны с днем года</h3>
             <p id="screen-color-calendar-p">
@@ -788,9 +808,10 @@
         "privacy-policy-ref": "Перейти к разделу «Privacy Policy»",
         "section-screens": "Экраны приложения",
         "section-download": "Скачать APK",
-        "download-p1": "Приложение можно установить напрямую или через RuStore.",
+        "download-p1": "Приложение можно установить напрямую или через RuStore или ApkPure.",
         "download-p2": "Скачать и установить ColorInsomnia с RuStore",
-        "download-p3": "Также приложение можно установить напрямую, без использования RuStore.",
+        "download-p2-a": "Скачать и установить ColorInsomnia с ApkPure",
+        "download-p3": "Приложение можно установить напрямую, без использования магазинов приложений.",
         "download-checksum-text-17": "Перед установкой рекомендуется сверить SHA‑256‑хэш:",
         "footer-text": "ColorInsomnia © 2026 | Все права защищены.",
         "screen-main-title": "Главный экран",
@@ -840,8 +861,9 @@
           "privacy-policy-ref": "Go to «Privacy Policy»",
           "section-screens": "Screens",
           "section-download": "Download APK",
-          "download-p1": "The app can be installed directly or via RuStore.",
+          "download-p1": "The app can be installed directly or via RuStore or ApkPure.",
           "download-p2": "Download and install ColorInsomnia from RuStore",
+          "download-p2-a": "Download and install ColorInsomnia from ApkPure",
           "download-p3": "The app can also be installed directly, without RuStore.",
           "download-checksum-text-17": "Before installing, it is recommended to verify the SHA‑256 checksum:",
           "footer-text": "ColorInsomnia © 2026 | All rights reserved.",
@@ -965,6 +987,7 @@
 
     document.getElementById("download-p1").textContent = t["download-p1"];
     document.getElementById("download-ru-store").textContent = t["download-p2"];
+    document.getElementById("download-apk-pure").textContent = t["download-p2-a"];
     document.getElementById("download-p3").textContent = t["download-p3"];
     document.getElementById("download-checksum-text-17").textContent = t["download-checksum-text-17"];
     document.getElementById("footer-text").textContent = t["footer-text"];
